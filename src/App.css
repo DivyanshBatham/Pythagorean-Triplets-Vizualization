@@ -1,33 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
+  font-family: sans-serif;
+  background: #F1F1F1;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 { 
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-evenly;
+}
+
+form input {
+  padding: 5px;
+}
+
+.canvas {
+  flex-grow: 1;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.posAbs {
+  position: absolute;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gridBox {
+  display: grid;
+}
+
+.triangle {
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+  background: #6B5E62;
+}
+
+.triangle .span-l {
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.triangle .span-b {
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.triangle .span-h {
+  left: 50%;
+  top: 50%;
+}
+
+.right {
+  box-sizing: border-box;
+  left: 100%;
+  background: #FE9A8B;
+  border: solid 1px #282828;
+}
+
+.bottom {
+  box-sizing: border-box;
+  top: 100%;
+  background: #A6B094;
+  border: solid 1px #282828;
+}
+
+.top {
+  box-sizing: border-box;
+  bottom: 100%;
+  right: 0;
+  transform-origin: bottom right;
+  background: #B4A1A1;
+  border: solid 1px #282828;
+}
+
+.cell {
+  box-sizing: border-box;
+  border: solid 1px #282828;
 }
